@@ -48,6 +48,33 @@ public class BuildingFacade implements IBusiness {
         this.buildingList.remove(building);
     }
 
+    @Override
+    public ISensor createSensor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+    @Override
+    public IBuilding getBuilding(String buldingName) {
+       for(IBuilding buildings : this.buildingList) {
+           if(buldingName.equals(buildings.getName())) {
+               return buildings;
+           }
+           
+       }
+       return null;
+    }
+
+    @Override
+    public ISensor getSensor(IBuilding building) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
+
+    
+    
     
     
     

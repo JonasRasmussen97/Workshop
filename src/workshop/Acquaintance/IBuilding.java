@@ -13,7 +13,8 @@ import java.util.List;
  * @author Jonas
  */
 public interface IBuilding {
-    public void addSensor(ISensor sensor);
+    public ISensor addSensor(String name);
     public void removeSensor(ISensor sensor);
     public List getSensorList();
+    public String getName();
 }

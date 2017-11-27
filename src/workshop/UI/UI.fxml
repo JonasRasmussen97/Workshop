@@ -36,15 +36,18 @@
                   </TitledPane>
                   <VBox prefHeight="200.0" prefWidth="135.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="120.0" text="Remove Sensor" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="Add Sensor" />
+                        <Button mnemonicParsing="false" onAction="#removeSensor" prefHeight="26.0" prefWidth="120.0" text="Remove Sensor" />
+                        <Button mnemonicParsing="false" onAction="#createSensor" prefHeight="26.0" prefWidth="123.0" text="Add Sensor" />
+                        <TextField fx:id="sensorName" />
+                        <ComboBox fx:id="Buildings" prefWidth="150.0" />
                         <Button mnemonicParsing="false" onAction="#deleteBuilding" prefHeight="43.0" prefWidth="117.0" text="Remove Building" />
                      </children>
                      <padding>
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                   </VBox>
-                  <TextArea prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="sensorList" prefHeight="200.0" prefWidth="200.0" />
+                  <ComboBox fx:id="sensorToList" onAction="#sensorToList" prefWidth="150.0" />
                </children>
             </HBox>
             <HBox prefHeight="200.0" prefWidth="300.0">
@@ -83,6 +86,44 @@
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
+                  </VBox>
+                  <MenuButton mnemonicParsing="false" onAction="#chooseBuilding" text="MenuButton">
+                    <items>
+                      <MenuItem fx:id="menu1" mnemonicParsing="false" onAction="#Menu1" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" onAction="#menu2" text="Action 2" />
+                    </items>
+                  </MenuButton>
+                  <VBox prefHeight="213.0" prefWidth="201.0" spacing="8.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="118.0" text="Co2">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="co2">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </TextField>
+                        <Label text="Temperatur">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="temp">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#saveMeasurement" text="Save ">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
                   </VBox>
                </children>
             </HBox>

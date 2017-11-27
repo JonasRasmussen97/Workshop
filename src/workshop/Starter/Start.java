@@ -12,7 +12,6 @@ import workshop.UI.UIFacade;
 
 
 /**
- *
  * @author Jonas
  */
 public class Start {

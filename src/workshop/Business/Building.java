@@ -19,6 +19,7 @@ public class Building implements IBuilding {
     private String placement;
     private int SensorCount;
     private List<ISensor> sensors = new ArrayList(); 
+    private Sensor sensor;
     
     public Building (String name, String placement) {
        this.name = name;
@@ -26,12 +27,13 @@ public class Building implements IBuilding {
        
     }
     
-    public void addSensor(ISensor sensor) {
-        if(sensors.contains(sensor)) {
-            System.out.println("Sensor already exists.");
-        } else {
+
+    
+    public ISensor addSensor(String name) {
+        ISensor sensor = new Sensor(name);
         sensors.add(sensor);
-    }
+        return sensor;
+    
     }
     
     public void removeSensor(ISensor sensor) {
@@ -44,6 +46,15 @@ public class Building implements IBuilding {
     
     public List getSensorList() {
         return this.sensors;
+    }
+    
+    public ISensor getSensor(String name) {
+        for (ISensor sen : this.sensors) {
+            if ( name.equals(sen.getName())) {
+                return sen;
+            }
+        }
+        return null;
     }
     
     public void getMeasurements() {
@@ -59,9 +70,17 @@ public class Building implements IBuilding {
     }
     
     
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    
    public String toString() {
        return this.name + ", " + this.placement;
    }
+
+
 
 
     

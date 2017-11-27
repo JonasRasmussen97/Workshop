@@ -19,14 +19,19 @@ public class Sensor implements ISensor {
     private double co2Level;
     private List<Double> temperatureHistory = new ArrayList();
     private List<Double> co2LevelHistory = new ArrayList();
+    private String name;
     
-    public Sensor() {
-        
+    public Sensor(String name) {
+        this.name = name;
     }
     
     public void setTemperature(double temperature) {
         this.temperature = temperature;
         temperatureHistory.add(temperature);
+    }
+    
+    public String getName() {
+        return this.name;
     }
     
     public double getTemperature() {
@@ -53,11 +58,11 @@ public class Sensor implements ISensor {
     public List<Double> getCo2LevelHistory() {
        return co2LevelHistory;
     }
-    
-   
-    
+      
     
     
-    
+    public String toString() {
+        return this.name;
+    }
     
 }

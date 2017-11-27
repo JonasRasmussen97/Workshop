@@ -11,11 +11,15 @@ import java.util.List;
  *
  * @author Jonas
  */
+
 public interface IBusiness {
     
     IBuilding addBuilding(String name, String placement);
     List<IBuilding> getBuildings();
     void removeBuilding(IBuilding building);
+    ISensor createSensor();
+    ISensor getSensor(IBuilding building);
+    IBuilding getBuilding(String buldingName);
     
     
 }

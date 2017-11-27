@@ -18,4 +18,5 @@ public interface ISensor {
     public double getco2Level();
     public List<Double> getTemperatureHistory();
     public List<Double> getCo2LevelHistory();
+    public String getName();
 }
