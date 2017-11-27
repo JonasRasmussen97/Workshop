@@ -27,12 +27,14 @@ public class UIController implements Initializable {
     
 
     @FXML
-    private ListView buildingList;
+    private ListView<IBuilding> buildingList;
     
     @FXML
     private TextField buildingName;
     @FXML
     private TextField buildingAddress;
+    
+    private ObservableList<IBuilding> buildings;
     
     private IBusiness business;
     
@@ -42,8 +44,9 @@ public class UIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        buildings = FXCollections.observableArrayList();
     
+       
         
       
     }    
@@ -55,11 +58,23 @@ public class UIController implements Initializable {
         buildingAddress.clear();
         buildingName.clear();
         
+        buildings.add(newBuilding);
+        
+        buildingList.setItems(buildings);
 
     }
     
     public void injectBusiness(IBusiness _business) {
         business = _business;
+    }
+
+    @FXML
+    private void deleteBuilding(ActionEvent event) {
+        //Removing from ObservableList
+        
+         this.business.removeBuilding(buildingList.getSelectionModel().getSelectedItem());
+        buildingList.getItems().remove(buildingList.getSelectionModel().getSelectedItem()); 
+       
     }
     
     

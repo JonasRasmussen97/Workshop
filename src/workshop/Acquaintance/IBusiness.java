@@ -15,6 +15,7 @@ public interface IBusiness {
     
     IBuilding addBuilding(String name, String placement);
     List<IBuilding> getBuildings();
+    void removeBuilding(IBuilding building);
     
     
 }

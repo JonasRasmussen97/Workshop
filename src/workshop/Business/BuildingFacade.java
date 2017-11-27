@@ -43,6 +43,10 @@ public class BuildingFacade implements IBusiness {
     public List<IBuilding> getBuildings() {
       return this.buildingList;
     }
+    
+    public void removeBuilding(IBuilding building) {
+        this.buildingList.remove(building);
+    }
 
     
     

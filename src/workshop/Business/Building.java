@@ -57,6 +57,11 @@ public class Building implements IBuilding {
         }
        
     }
+    
+    
+   public String toString() {
+       return this.name + ", " + this.placement;
+   }
 
 
     
